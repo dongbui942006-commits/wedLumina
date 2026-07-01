@@ -1,0 +1,95 @@
+.hero {
+  position: relative;
+  height: 100vh;
+  min-height: 600px;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}
+
+.hero-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+}
+
+.hero-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 30%;
+  transform: scale(1.05);
+  animation: slowZoom 20s ease-out infinite alternate;
+}
+
+@keyframes slowZoom {
+  from { transform: scale(1); }
+  to { transform: scale(1.1); }
+}
+
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to right, rgba(250, 249, 246, 0.9) 0%, rgba(250, 249, 246, 0.4) 50%, rgba(250, 249, 246, 0.1) 100%);
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+  max-width: 600px;
+  margin: 0; /* Align left */
+}
+
+.hero-subtitle {
+  display: inline-block;
+  font-size: 0.9rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--color-primary);
+  margin-bottom: 16px;
+}
+
+.hero-title {
+  margin-bottom: 24px;
+  color: var(--color-text-main);
+}
+
+.hero-text {
+  font-size: 1.1rem;
+  color: var(--color-text-muted);
+  margin-bottom: 40px;
+  max-width: 480px;
+}
+
+.hero-actions {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.hero-btn-outline {
+  border-color: rgba(44, 44, 44, 0.2);
+}
+
+@media (max-width: 768px) {
+  .hero-overlay {
+    background: linear-gradient(to top, rgba(250, 249, 246, 1) 0%, rgba(250, 249, 246, 0.7) 60%, rgba(250, 249, 246, 0.2) 100%);
+  }
+  
+  .hero-content {
+    margin-top: auto;
+    padding-bottom: 80px;
+    text-align: center;
+  }
+  
+  .hero-actions {
+    justify-content: center;
+  }
+}
